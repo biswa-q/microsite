@@ -74,6 +74,8 @@ const HomeLayout: React.FC = () => {
       text + " " + url
     )}`;
 
+    console.log("lineShareUrl", lineShareUrl);
+
     // Open the LINE app with the content
     window.location.href = lineShareUrl;
   }
