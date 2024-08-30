@@ -1,0 +1,65 @@
+.template-container {
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 2rem;
+	background-size: cover;
+	background-position: center;
+	color: white;
+	font-family: Arial, sans-serif;
+}
+
+.template-header {
+	text-align: center;
+	margin-bottom: 2rem;
+}
+
+.company-logo {
+	width: 100px;
+	height: auto;
+}
+
+.template-content {
+	background-color: rgba(0, 0, 0, 0.6);
+	padding: 2rem;
+	border-radius: 10px;
+}
+
+h1,
+h2 {
+	color: #f1c40f;
+}
+
+ul {
+	list-style-type: none;
+	padding-left: 0;
+}
+
+a {
+	color: #3498db;
+}
+
+strong {
+	color: #e74c3c;
+}
+
+.template-header {
+	font-family: var(--header-font);
+	color: var(--header-color);
+	font-size: max(24px, min(80px, 6vw)); /* Responsive font size */
+	font-weight: bold; /* Make header text bold */
+	margin: 0; /* Remove default margin */
+	padding: 10px; /* Add padding for better spacing */
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Slight shadow for better readability */
+}
+
+:root {
+	--header-font: "Roboto", sans-serif; /* Modern, clean font */
+	--header-color: #ff5722; /* Vibrant color for the header text */
+	--background-color: rgba(
+		0,
+		0,
+		0,
+		0.5
+	); /* Semi-transparent dark overlay for text readability */
+	--background-image: url("path/to/your/background-image.jpg"); /* URL for the background image */
+}
