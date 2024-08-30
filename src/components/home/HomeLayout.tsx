@@ -20,18 +20,18 @@ const HomeLayout: React.FC = () => {
     getAgentData();
   }, []);
 
-  function shareViaLineApp() {
-    const text = "Check out this amazing content!";
-    const url = "https://biswa.staging.fairdee.co.th/"; // The URL you want to share
-    const lineShareUrl = `line://msg/text/${encodeURIComponent(
-      text + " " + url
-    )}`;
+  // function shareViaLineApp() {
+  //   const text = "Check out this amazing content!";
+  //   const url = "https://biswa.staging.fairdee.co.th/"; // The URL you want to share
+  //   const lineShareUrl = `line://msg/text/${encodeURIComponent(
+  //     text + " " + url
+  //   )}`;
 
-    console.log("lineShareUrl", lineShareUrl);
+  //   console.log("lineShareUrl", lineShareUrl);
 
-    // Open the LINE app with the content
-    window.location.href = lineShareUrl;
-  }
+  //   // Open the LINE app with the content
+  //   window.location.href = lineShareUrl;
+  // }
 
   function openLineChat() {
     const botLineId = "_biswa"; // Replace with your bot's LINE ID
