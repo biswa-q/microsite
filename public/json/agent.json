@@ -11,9 +11,24 @@
     "state": "Karnataka",
     "country": "India"
   },
-  "total_policies_sold": 31,
-  "happy_customers_served": 265,
-  "average_response_time": "< 1 Hr",
+  "total_policies_sold": {
+    "type": "Policies sold",
+    "text": "15.7",
+    "span": "K",
+    "icon": "badgeIcon"
+  },
+  "happy_customers_served": {
+    "type": "Happy Customers ",
+    "text": "20.5",
+    "span": "K",
+    "icon": "happyIcon"
+  },
+  "average_response_time": {
+    "type": "Response Time ",
+    "text": "< 1 ",
+    "span": "Hr",
+    "icon": "timeIcon"
+  },
   "customer_reviews": [
     {
       "review_id": "R001",
@@ -88,18 +103,6 @@
       "type": "Policy renewal offer"
     }
   ],
-  "special_offers": [
-    {
-      "offer_id": "O001",
-      "description": "20% discount on health insurance for customers aged 30-40.",
-      "valid_until": "2024-09-30"
-    },
-    {
-      "offer_id": "O002",
-      "description": "Special birthday discount of 15% on all policies.",
-      "valid_until": "2024-12-31"
-    }
-  ],
   "performance_metrics": {
     "conversion_rate": "15%",
     "total_communications": 150,
@@ -108,23 +111,23 @@
   "specialisations": [
     {
       "name": "Automobile Insurance",
-      "icon": "motor"
+      "icon": "motorIcon"
     },
     {
       "name": "Health Insurancee",
-      "icon": "health"
+      "icon": "healthIcon"
     },
     {
       "name": "Travel Insurance",
-      "icon": "travel"
+      "icon": "travelIcon"
     },
     {
       "name": "Home Insurance",
-      "icon": "home"
+      "icon": "homeIcon"
     }
   ],
   "offers": [
-    { "discount": "20% OFF", "type": "Travel Insurance" },
-    { "discount": "15% OFF", "type": "Auto Insurance" }
+    { "discount": "20%", "type": "Travel Insurance" },
+    { "discount": "15%", "type": "Auto Insurance" }
   ]
 }
