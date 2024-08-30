@@ -56,16 +56,16 @@ const HomeLayout: React.FC = () => {
       .catch((error) => console.log("error", error));
   }
 
-  function shareLink() {
-    const shareUrl = "https://biswa.staging.fairdee.co.th/"; // The URL you want to share
-    const message = "Check out this amazing content!"; // The text you want to share
+  // function shareLink() {
+  //   const shareUrl = "https://biswa.staging.fairdee.co.th/"; // The URL you want to share
+  //   const message = "Check out this amazing content!"; // The text you want to share
 
-    // Construct the LINE share link with both URL and text
-    const lineShareUrl = `https://social-plugins.line.me/lineit/share?url=${encodeURIComponent(
-      shareUrl
-    )}&text=${encodeURIComponent(message)}`;
-    window.open(lineShareUrl, "_blank");
-  }
+  //   // Construct the LINE share link with both URL and text
+  //   const lineShareUrl = `https://social-plugins.line.me/lineit/share?url=${encodeURIComponent(
+  //     shareUrl
+  //   )}&text=${encodeURIComponent(message)}`;
+  //   window.open(lineShareUrl, "_blank");
+  // }
 
   function shareViaLineApp() {
     const text = "Check out this amazing content!"; // The text you want to share
