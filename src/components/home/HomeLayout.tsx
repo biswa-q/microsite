@@ -20,6 +20,10 @@ const HomeLayout: React.FC = () => {
     getAgentData();
   }, []);
 
+  useEffect(() => {
+    textToImage();
+  }, []);
+
   function textToImage() {
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
@@ -52,9 +56,16 @@ const HomeLayout: React.FC = () => {
       .catch((error) => console.log("error", error));
   }
 
-  useEffect(() => {
-    textToImage();
-  }, []);
+  function shareLink() {
+    const shareUrl = "https://biswa.staging.fairdee.co.th/"; // The URL you want to share
+    const message = "Check out this amazing content!"; // The text you want to share
+
+    // Construct the LINE share link with both URL and text
+    const lineShareUrl = `https://social-plugins.line.me/lineit/share?url=${encodeURIComponent(
+      shareUrl
+    )}&text=${encodeURIComponent(message)}`;
+    window.open(lineShareUrl, "_blank");
+  }
 
   return (
     <div className="">
@@ -75,6 +86,7 @@ const HomeLayout: React.FC = () => {
         <button
           className="w-[calc(100%-24px)] rounded-[10px] bg-[#111111] flex justify-start items-center py-[6px] px-[12px] m-auto mt-[44px] relative"
           style={{ boxShadow: "0px 4px 36px 10px rgba(0, 0, 0, 0.25)" }}
+          onClick={shareLink}
         >
           <img src={lineLogo} alt="" />
           <span className="text-white text-center text-[22px] font-semibold leading-[20px] mr-[20px] ml-[12px] grow-[1]">
