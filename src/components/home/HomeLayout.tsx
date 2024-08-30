@@ -1,13 +1,6 @@
-import React, { useState } from "react";
-import {
-  FileText,
-  Users,
-  Clock,
-  TrendingUp,
-  Star,
-  MessageCircle,
-  Gift,
-} from "lucide-react";
+import React, { useEffect, useState } from "react";
+import { FileText, Users, Clock, TrendingUp, Star, Gift } from "lucide-react";
+import OpenAI from "openai";
 
 interface ContactDetails {
   email: string;
@@ -232,6 +225,40 @@ const HomeLayout: React.FC = () => {
   const [activeTab, setActiveTab] = useState<"reviews" | "interactions">(
     "reviews"
   );
+
+  async function generateHaiku(apiKey: string) {
+    // Initialize OpenAI with the provided API key
+    const openai = new OpenAI({
+      apiKey: apiKey,
+      dangerouslyAllowBrowser: true,
+    });
+
+    try {
+      // Create a chat completion request
+      const completion = await openai.chat.completions.create({
+        model: "gpt-4o",
+        messages: [
+          { role: "system", content: "You are a helpful assistant." },
+          {
+            role: "user",
+            content: "Write a haiku about recursion in programming.",
+          },
+        ],
+      });
+
+      // Log the response from the completion
+      console.log(completion.choices[0].message.content);
+    } catch (error) {
+      console.error("Error generating haiku:", error);
+    }
+  }
+
+  useEffect(() => {
+    // Example usage: replace 'your-api-key' with your actual API key
+    generateHaiku(
+      "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"
+    );
+  }, []);
 
   return (
     <div className="min-h-screen bg-gray-100">
