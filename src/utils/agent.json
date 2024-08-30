@@ -1,0 +1,107 @@
+{
+  "agent_id": "A001",
+  "name": "Arjun Sharma",
+  "contact_details": {
+    "email": "arjun.sharma@example.com",
+    "phone": "+919876543210"
+  },
+  "location": {
+    "city": "Bangalore",
+    "state": "Karnataka",
+    "country": "India"
+  },
+  "total_policies_sold": 31,
+  "happy_customers_served": 265,
+  "average_response_time": "2 hours",
+  "customer_reviews": [
+    {
+      "review_id": "R001",
+      "customer_name": "John Doe",
+      "rating": 5,
+      "comment": "Excellent service and support!",
+      "date": "2024-08-01"
+    },
+    {
+      "review_id": "R002",
+      "customer_name": "Jane Smith",
+      "rating": 4,
+      "comment": "Great offers and easy to understand policies.",
+      "date": "2024-08-10"
+    },
+    {
+      "review_id": "R003",
+      "customer_name": "Amit Kumar",
+      "rating": 4,
+      "comment": "Good service, but could improve response time.",
+      "date": "2024-08-18"
+    },
+    {
+      "review_id": "R004",
+      "customer_name": "Sneha Patel",
+      "rating": 5,
+      "comment": "Highly recommend, very responsive and helpful.",
+      "date": "2024-08-22"
+    },
+    {
+      "review_id": "R005",
+      "customer_name": "Rahul Gupta",
+      "rating": 4,
+      "comment": "Good service, but policy details could be clearer.",
+      "date": "2024-08-24"
+    }
+  ],
+  "recent_interactions": [
+    {
+      "interaction_id": "I001",
+      "customer_name": "John Doe",
+      "date": "2024-08-25",
+      "channel": "WhatsApp",
+      "type": "Policy inquiry"
+    },
+    {
+      "interaction_id": "I002",
+      "customer_name": "Jane Smith",
+      "date": "2024-08-20",
+      "channel": "WhatsApp",
+      "type": "Policy renewal reminder"
+    },
+    {
+      "interaction_id": "I003",
+      "customer_name": "Amit Kumar",
+      "date": "2024-08-21",
+      "channel": "WhatsApp",
+      "type": "New policy introduction"
+    },
+    {
+      "interaction_id": "I004",
+      "customer_name": "Sneha Patel",
+      "date": "2024-08-23",
+      "channel": "Line",
+      "type": "Discount offer on birthday"
+    },
+    {
+      "interaction_id": "I005",
+      "customer_name": "Rahul Gupta",
+      "date": "2024-08-26",
+      "channel": "WhatsApp",
+      "type": "Policy renewal offer"
+    }
+  ],
+  "special_offers": [
+    {
+      "offer_id": "O001",
+      "description": "20% discount on health insurance for customers aged 30-40.",
+      "valid_until": "2024-09-30"
+    },
+    {
+      "offer_id": "O002",
+      "description": "Special birthday discount of 15% on all policies.",
+      "valid_until": "2024-12-31"
+    }
+  ],
+  "performance_metrics": {
+    "conversion_rate": "15%",
+    "total_communications": 150,
+    "positive_feedback_ratio": "90%"
+  }
+}
