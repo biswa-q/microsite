@@ -68,8 +68,11 @@ const HomeLayout: React.FC = () => {
   // }
 
   function shareViaLineApp() {
-    const text = "Check out this amazing content!"; // The text you want to share
-    const lineShareUrl = `line://msg/text/${encodeURIComponent(text)}`;
+    const text = "Check out this amazing content!";
+    const url = "https://biswa.staging.fairdee.co.th/"; // The URL you want to share
+    const lineShareUrl = `line://msg/text/${encodeURIComponent(
+      text + " " + url
+    )}`;
 
     // Open the LINE app with the content
     window.location.href = lineShareUrl;
