@@ -1,25 +1,39 @@
-import { ChevronRight } from "lucide-react";
+// import { ChevronRight } from "lucide-react";
 
 import healthIcon from "../../assets/health-icon.svg";
 import homeIcon from "../../assets/home-icon.svg";
 import motorIcon from "../../assets/motor-icon.svg";
 import travelIcon from "../../assets/travel-icon.svg";
+import { useNavigate } from "react-router-dom";
 
 interface Props {
   data: any;
 }
 
-const InsuranceOption = ({ icon, text }: { icon: any; text: any }) => (
-  <div className="flex items-center justify-between p-4 border border-gray-200 rounded-lg mb-[20px]">
+const InsuranceOption = ({
+  icon,
+  text,
+  navigate,
+}: {
+  icon: any;
+  text: any;
+  navigate: any;
+}) => (
+  <div
+    className="flex items-center justify-between p-4 border border-gray-200 rounded-lg mb-[20px]"
+    onClick={() => navigate("/reachout")}
+  >
     <div className="flex items-center">
       {icon}
       <span className="ml-4 text-lg">{text}</span>
     </div>
-    <ChevronRight className="text-orange-400" />
+    {/* <ChevronRight className="text-orange-400" /> */}
   </div>
 );
 
 const InsuranceOptions = ({ data }: Props) => {
+  const navigate = useNavigate();
+
   function getIcon(type: string) {
     switch (type) {
       case "healthIcon":
@@ -46,6 +60,7 @@ const InsuranceOptions = ({ data }: Props) => {
               </div>
             }
             text={d.name}
+            navigate={navigate}
           />
         ))}
     </div>
