@@ -67,6 +67,14 @@ const HomeLayout: React.FC = () => {
     window.open(lineShareUrl, "_blank");
   }
 
+  function shareViaLineApp() {
+    const text = "Check out this amazing content!"; // The text you want to share
+    const lineShareUrl = `line://msg/text/${encodeURIComponent(text)}`;
+
+    // Open the LINE app with the content
+    window.location.href = lineShareUrl;
+  }
+
   return (
     <div className="">
       <div className="bg-[url('./assets/hero.svg')] bg-no-repeat h-[500px] w-full pt-[60px]">
@@ -86,7 +94,7 @@ const HomeLayout: React.FC = () => {
         <button
           className="w-[calc(100%-24px)] rounded-[10px] bg-[#111111] flex justify-start items-center py-[6px] px-[12px] m-auto mt-[44px] relative"
           style={{ boxShadow: "0px 4px 36px 10px rgba(0, 0, 0, 0.25)" }}
-          onClick={shareLink}
+          onClick={shareViaLineApp}
         >
           <img src={lineLogo} alt="" />
           <span className="text-white text-center text-[22px] font-semibold leading-[20px] mr-[20px] ml-[12px] grow-[1]">
