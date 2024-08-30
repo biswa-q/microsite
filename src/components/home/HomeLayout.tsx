@@ -255,9 +255,8 @@ const HomeLayout: React.FC = () => {
 
   useEffect(() => {
     // Example usage: replace 'your-api-key' with your actual API key
-    generateHaiku(
-      "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"
-    );
+    // generateHaiku(
+    // );
   }, []);
 
   return (
