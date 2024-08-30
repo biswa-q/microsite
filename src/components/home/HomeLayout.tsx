@@ -34,7 +34,7 @@ const HomeLayout: React.FC = () => {
   // }
 
   function openLineChat() {
-    const botLineId = "_biswa"; // Replace with your bot's LINE ID
+    const botLineId = "biswa-l"; // Replace with your bot's LINE ID
     const lineChatUrl = `https://line.me/R/ti/p/${botLineId}`;
 
     // Open the LINE app to chat with the bot
