@@ -44,7 +44,7 @@ const templates: any = [
 	},
 	{
 		templateId: "info",
-		insurancetype: "motor",
+		insuranceType: "",
 		message: "",
 		servicesTitle: "WHAT'S INCLUDED",
 		services: [
@@ -96,16 +96,6 @@ const TemplateRenderer: React.FC = () => {
 							: storedMessage.image || "",
 				})
 			}
-			// console.log({
-			// 	message:
-			// 		storedMessage && typeof storedMessage === "string"
-			// 			? JSON.parse(storedMessage)
-			// 			: storedMessage || null,
-			// 	image:
-			// 		storedMessage && typeof storedMessage === "string"
-			// 			? JSON.parse(storedMessage).image
-			// 			: storedMessage.image || "",
-			// })
 		}
 	}, [id])
 
@@ -148,7 +138,7 @@ const TemplateRenderer: React.FC = () => {
 					purchaseLink={template?.message?.purchaseLink}
 					imgUrl={template?.image || ""}
 				/>
-			) : (
+			) : template?.message?.templateType === "info" ? (
 				<InformativeCard
 					message={template?.message?.message}
 					insuranceType={template?.message?.insuranceType}
@@ -156,7 +146,7 @@ const TemplateRenderer: React.FC = () => {
 					purchaseLink={template?.message?.purchaseLink}
 					imgUrl={template?.image}
 				/>
-			)}
+			) : null}
 		</>
 	)
 }

@@ -4,7 +4,8 @@ import { useNavigate } from "react-router-dom"
 import OpenAI from "openai"
 import { v4 as uuidv4 } from "uuid"
 
-const apiKey = ""
+const apiKey =
+	""
 const openai = new OpenAI({
 	apiKey,
 	dangerouslyAllowBrowser: true,
@@ -75,10 +76,10 @@ const TemplateGeneratorLayout: React.FC = () => {
 		},
 		{
 			templateType: "info",
-			insurancetype: "",
+			insuranceType: "",
 			message: "",
 			servicesTitle: "WHAT'S INCLUDED",
-			services: [
+			service: [
 				"Personal Accident Cover",
 				"Comprehensive Own Damage Insurance",
 				"Protection Against Accidental Damages",
@@ -128,8 +129,8 @@ const TemplateGeneratorLayout: React.FC = () => {
 					jsonTemplate[1]
 				)} (output without string wrapper)".`
 			case "info":
-				return `Create a JSON template for informative blog for ${insuranceType} insurance. 
-                There should not be any text in the image The structure of the JSON should be as follows: 
+				return `Create a JSON template such that informative message is generated for ${insuranceType} insurance. 
+                There should revelant services related to ${insuranceType}. The structure of the JSON should be as follows: 
                   ${JSON.stringify(
 										jsonTemplate[2]
 									)} output should be without string wrapper`
@@ -188,9 +189,9 @@ const TemplateGeneratorLayout: React.FC = () => {
 		if (templateType === "occasion") {
 			prompt = `Generate the image according to ${customOccasion} no text`
 		} else if (templateType === "discount") {
-			prompt = `Generate the image related to insurance with no text and light background such that it can be used a background image for template`
+			prompt = `Generate the image related to insurance with no text and background such that it can be used a background image for template according to ${insuranceType}`
 		} else {
-			prompt = `Generate the image such that it's informative for ${insuranceType} insurance to influence customers to purchase this specific insurance`
+			prompt = `Generate the image for ${insuranceType} insurance to influence customers to purchase this specific insurance`
 		}
 
 		if (!textMessagesObj.image) {
