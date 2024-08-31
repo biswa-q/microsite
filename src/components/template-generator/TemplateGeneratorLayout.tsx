@@ -6,6 +6,7 @@ import { v4 as uuidv4 } from "uuid";
 import AiLoader from "../ai-loader/AiLoader";
 
 const apiKey = "";
+const imageAiKey = "";
 const openai = new OpenAI({
   apiKey,
   dangerouslyAllowBrowser: true,
@@ -146,7 +147,7 @@ const TemplateGeneratorLayout: React.FC = () => {
         "Content-Type": "application/json",
       });
       const payload = {
-        key: "",
+        key: imageAiKey,
         prompt: prompt,
         negative_prompt: "bad quality",
         width: 512,
