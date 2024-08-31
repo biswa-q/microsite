@@ -90,7 +90,10 @@ const TemplateRenderer: React.FC = () => {
             storedMessage && typeof storedMessage === "string"
               ? JSON.parse(storedMessage)
               : storedMessage || null,
-          image: storedMessage.image || "",
+          image:
+            storedMessage && typeof storedMessage === "string"
+              ? JSON.parse(storedMessage).image
+              : storedMessage.image || "",
         });
       }
     }
