@@ -47,7 +47,7 @@ const InsuranceStats: React.FC<{ data: any }> = ({ data }) => {
                 {d.text} <span className="text-[#FEB804]">{d.span}</span>
               </p>
             }
-            label={""}
+            label={d.type}
             icon={
               <div>
                 <img src={getIcon(d.icon)} alt="" />

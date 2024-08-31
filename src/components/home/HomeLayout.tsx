@@ -7,8 +7,10 @@ import InsuranceStats from "./InsuranceStats";
 import InsuranceDiscounts from "./InsuranceDiscounts";
 import TestimonialCard from "./TestimonialCard";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const HomeLayout: React.FC = () => {
+  const navigate = useNavigate();
   const [agentObject, setAgentObject] = useState<any>({});
   async function getAgentData() {
     let res = await axios.get(`json/agent.json`);
@@ -80,6 +82,20 @@ const HomeLayout: React.FC = () => {
             Recent Reviews
           </p>
           <TestimonialCard />
+          <button
+            className="w-[calc(100%-24px)] rounded-[10px] bg-[#111111] flex justify-start items-center py-[16px] px-[24px] m-auto mt-[44px] relative"
+            style={{ boxShadow: "0px 4px 36px 10px rgba(0, 0, 0, 0.25)" }}
+            onClick={() => navigate("/template-generator")}
+          >
+            <span className="text-white text-center text-[18px] font-semibold leading-[20px] mr-[20px] ml-[12px] grow-[1]">
+              Create template
+            </span>
+            <img
+              src={rightArrow}
+              alt=""
+              className="absolute right-[0px] top-[6px]"
+            />
+          </button>
         </div>
       </div>
     </div>
