@@ -2,23 +2,25 @@ import React from "react";
 import qoalaIcon from "../../assets/qoala-logo.svg";
 
 interface Occasion {
-  wishes?: string;
-  message?: string;
-  discountPercentage?: number;
-  customerName?: string;
-  purchaseLink?: string;
-  imgUrl?: string; // URL for the background image
-  service?: string[];
+	wishes?: string
+	message?: string
+	discountPercentage?: number
+	insuranceType?: string
+	customerName?: string
+	purchaseLink?: string
+	imgUrl?: string // URL for the background image
+	service?: string[]
 }
 
 const OccasionCard: React.FC<Occasion> = ({
-  wishes = "Happy Birthday!",
-  message = "We hope you have a wonderful day and an amazing year ahead!",
-  discountPercentage = 5,
-  customerName = "Valued Customer",
-  purchaseLink = "#",
-  imgUrl = "",
-  service = [],
+	wishes = "Happy Birthday!",
+	message = "We hope you have a wonderful day and an amazing year ahead!",
+	discountPercentage = 5,
+	insuranceType = "motor",
+	customerName = "Valued Customer",
+	purchaseLink = "#",
+	imgUrl = "",
+	service = [],
 }) => {
   const formattedWishes = `${wishes} ${customerName}`;
   const formattedMessage = `${message} ${customerName}`;

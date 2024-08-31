@@ -4,7 +4,8 @@ import { useNavigate } from "react-router-dom";
 import OpenAI from "openai";
 import { v4 as uuidv4 } from "uuid";
 
-const apiKey = "your-api-key";
+const apiKey =
+	""
 const openai = new OpenAI({
   apiKey,
   dangerouslyAllowBrowser: true,
@@ -125,7 +126,7 @@ const TemplateGeneratorLayout: React.FC = () => {
         )} output should be without string wrapper`;
       case "discount":
         return `Create a JSON template for a discount from an insurance company with  a ${discountPercentage} percentage on ${insuranceType} insurance
-                There should not be any text in the image The structure of the JSON should be as follows: 
+                Generate a iamge such that it can be used as a background image for template which is very attractive and no text . There should not be any text in the image The structure of the JSON should be as follows: 
                   ${JSON.stringify(
                     jsonTemplate[1]
                   )} output should be without string wrapper`;
@@ -140,30 +141,30 @@ const TemplateGeneratorLayout: React.FC = () => {
     }
   }
 
-  async function generateImageFromText(prompt: string): Promise<string | null> {
-    try {
-      const myHeaders = new Headers({
-        "Content-Type": "application/json",
-      });
-      const payload = {
-        key: "your-key",
-        prompt: prompt,
-        negative_prompt: "bad quality",
-        width: 512,
-        height: 512,
-        safety_checker: false,
-        seed: null,
-        samples: 1,
-        base64: false,
-        webhook: null,
-        track_id: null,
-      };
-      const requestOptions: RequestInit = {
-        method: "POST",
-        headers: myHeaders,
-        body: JSON.stringify(payload),
-        redirect: "follow",
-      };
+	async function generateImageFromText(prompt: string): Promise<string | null> {
+		try {
+			const myHeaders = new Headers({
+				"Content-Type": "application/json",
+			})
+			const payload = {
+				key: "",
+				prompt: prompt,
+				negative_prompt: "bad quality",
+				width: 512,
+				height: 512,
+				safety_checker: false,
+				seed: null,
+				samples: 1,
+				base64: false,
+				webhook: null,
+				track_id: null,
+			}
+			const requestOptions: RequestInit = {
+				method: "POST",
+				headers: myHeaders,
+				body: JSON.stringify(payload),
+				redirect: "follow",
+			}
 
       const response = await fetch(
         "https://modelslab.com/api/v6/realtime/text2img",
