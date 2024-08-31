@@ -14,7 +14,6 @@ interface Props {
 const InsuranceOption = ({
   icon,
   text,
-  navigate,
   action,
 }: {
   icon: any;
