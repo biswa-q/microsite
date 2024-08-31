@@ -60,6 +60,25 @@ const templates: any = [
     url: "http://localhost:5173/template-renderer/9a570242-00f7-4bed-b5ac-783f43e4e78c",
     id: "9a570242-00f7-4bed-b5ac-783f43e4e78c",
   },
+  {
+    templateType: "occasion",
+    occasion: "Dusshera",
+    wishes: "Dear Biswa, wishing you a joyous and prosperous Dusshera!",
+    message:
+      "We at Qoala are excited to offer you a special 10% discount on our travel insurance plans. Whether you're planning a getaway or an adventure, we've got you covered. Take advantage of this special offer and travel with peace of mind.",
+    discountPercentage: "10%",
+    customerName: "Biswa",
+    insuranceType: "travel",
+    purchaseLink: "https://www.insurancecompany.com/travel-insurance-offer",
+    service: [
+      "Emergency medical coverage",
+      "Trip cancellation protection",
+      "Lost or delayed baggage assistance",
+      "Travel accident insurance",
+      "24/7 customer support",
+    ],
+    id: "ec23f208-571c-4bd4-8312-0fb96b670487",
+  },
 ];
 
 const TemplateRendererCustomerLayout: React.FC = () => {
