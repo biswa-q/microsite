@@ -129,6 +129,21 @@ const TemplateRenderer: React.FC = () => {
     window.open(lineShareUrl, "_blank");
   }
 
+  function shareContent() {
+    if (navigator.share) {
+      navigator
+        .share({
+          title: `${template?.message?.wishes} `,
+          text: `${template?.message?.message}`,
+          url: `${window.location.href}`,
+        })
+        .then(() => console.log("Content shared successfully"))
+        .catch((error) => console.error("Error sharing content:", error));
+    } else {
+      alert("Web Share API is not supported in your browser.");
+    }
+  }
+
   return (
     <>
       {template?.message?.templateType === "occasion" ? (
@@ -161,13 +176,27 @@ const TemplateRenderer: React.FC = () => {
         />
       ) : null}
       <button
-        className="w-[calc(100%-24px)] rounded-[10px] bg-[#111111] flex justify-start items-center py-[6px] px-[12px] m-auto mt-[44px] relative"
+        className="mb-[24px] w-[calc(100%-24px)] rounded-[10px] bg-[#111111] flex justify-start items-center py-[6px] px-[12px] m-auto mt-[44px] relative"
         style={{ boxShadow: "0px 4px 36px 10px rgba(0, 0, 0, 0.25)" }}
         onClick={shareLink}
       >
         <img src={lineLogo} alt="" />
         <span className="text-white text-center text-[22px] leading-[20px] mr-[20px] ml-[12px] grow-[1]">
           Share template
+        </span>
+        <img
+          src={rightArrow}
+          alt=""
+          className="absolute right-[0px] top-[6px]"
+        />
+      </button>
+      <button
+        className="w-[calc(100%-24px)] rounded-[10px] bg-[#111111] flex justify-start items-center py-[6px] px-[12px] m-auto mt-[44px] relative"
+        style={{ boxShadow: "0px 4px 36px 10px rgba(0, 0, 0, 0.25)" }}
+        onClick={shareContent}
+      >
+        <span className="text-white text-center text-[22px] leading-[20px] mr-[20px] ml-[12px] grow-[1]">
+          Share
         </span>
         <img
           src={rightArrow}
