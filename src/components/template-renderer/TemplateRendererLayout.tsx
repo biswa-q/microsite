@@ -66,7 +66,6 @@ const TemplateRenderer: React.FC = () => {
   const { id } = useParams<{ id: string }>(); // Get the template ID from the URL
   const [template, setTemplate] = useState<{
     message: any;
-    imgUrl: string;
     image?: string;
   } | null>(null);
 
@@ -91,7 +90,7 @@ const TemplateRenderer: React.FC = () => {
             storedMessage && typeof storedMessage === "string"
               ? JSON.parse(storedMessage)
               : storedMessage || null,
-          imgUrl: storedMessage.image || "",
+          image: storedMessage.image || "",
         });
       }
     }
@@ -125,7 +124,7 @@ const TemplateRenderer: React.FC = () => {
           purchaseLink={template?.message?.purchaseLink}
           insuranceType={template?.message?.insuranceType}
           service={template?.message?.service || []} // Default to empty array if undefined
-          imgUrl={template?.imgUrl}
+          imgUrl={template?.image}
         />
       ) : template?.message?.templateType === "discount" ? (
         <DiscountCard
@@ -134,7 +133,7 @@ const TemplateRenderer: React.FC = () => {
           insuranceType={template?.message?.insuranceType}
           service={template?.message?.service || []}
           purchaseLink={template?.message?.purchaseLink}
-          imgUrl={template?.imgUrl}
+          imgUrl={template?.image || ""}
         />
       ) : (
         <InformativeCard
@@ -142,7 +141,7 @@ const TemplateRenderer: React.FC = () => {
           insuranceType={template?.message?.insuranceType}
           service={template?.message?.service || []}
           purchaseLink={template?.message?.purchaseLink}
-          imgUrl={template?.imgUrl}
+          imgUrl={template?.image}
         />
       )}
     </>
