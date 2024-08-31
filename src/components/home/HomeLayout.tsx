@@ -96,7 +96,7 @@ const HomeLayout: React.FC = () => {
           <p className="text-black text-[18px] font-medium leading-[20px]">
             Recent Reviews
           </p>
-          <TestimonialCard />
+          {/* <TestimonialCard /> */}
           <button
             className="w-[calc(100%-24px)] rounded-[10px] bg-[#111111] flex justify-start items-center py-[16px] px-[24px] m-auto mt-[44px] relative"
             style={{ boxShadow: "0px 4px 36px 10px rgba(0, 0, 0, 0.25)" }}
