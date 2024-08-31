@@ -198,7 +198,7 @@ const TemplateGeneratorLayout: React.FC = () => {
 
     if (!textMessagesObj.image) {
       const imgUrl: any = await generateImageFromText(prompt);
-      textMessagesObj.imgUrl = imgUrl;
+      textMessagesObj.image = imgUrl;
     }
 
     localStorage.setItem(
