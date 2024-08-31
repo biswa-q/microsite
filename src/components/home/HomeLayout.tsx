@@ -9,9 +9,13 @@ import TestimonialCard from "./TestimonialCard";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
+import qoalaIcon from "../../assets/qoala-logo.svg";
+import DialogForm from "../dialog/DialogForm";
+
 const HomeLayout: React.FC = () => {
   const navigate = useNavigate();
   const [agentObject, setAgentObject] = useState<any>({});
+  const [showDialog, setShowDialog] = useState(false);
   async function getAgentData() {
     let res = await axios.get(`json/agent.json`);
     setAgentObject(res.data);
@@ -27,8 +31,13 @@ const HomeLayout: React.FC = () => {
   }
 
   return (
-    <div className="">
+    <div className="relative">
       <div className="bg-[url('./assets/hero.svg')] bg-no-repeat h-[500px] w-full pt-[60px]">
+        <img
+          src={qoalaIcon}
+          alt=""
+          className="absolute right-[16px] top-[16px]"
+        />
         <p className="text-black text-center text-[18px] font-medium leading-[27px]">
           Hello
         </p>
@@ -61,7 +70,13 @@ const HomeLayout: React.FC = () => {
           <p className="text-black text-[18px] font-medium leading-[20px]">
             I specialize in
           </p>
-          <InsuranceOptions data={agentObject.specialisations} />
+          <InsuranceOptions
+            data={agentObject.specialisations}
+            action={(flag: any) => {
+              console.log("flag", flag);
+              setShowDialog(flag);
+            }}
+          />
           {agentObject.total_policies_sold &&
           agentObject.happy_customers_served &&
           agentObject.average_response_time ? (
@@ -98,6 +113,7 @@ const HomeLayout: React.FC = () => {
           </button>
         </div>
       </div>
+      <DialogForm show={showDialog} />
     </div>
   );
 };

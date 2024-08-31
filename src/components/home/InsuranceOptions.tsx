@@ -8,20 +8,23 @@ import { useNavigate } from "react-router-dom";
 
 interface Props {
   data: any;
+  action?: any;
 }
 
 const InsuranceOption = ({
   icon,
   text,
   navigate,
+  action,
 }: {
   icon: any;
   text: any;
   navigate: any;
+  action?: any;
 }) => (
   <div
     className="flex items-center justify-between p-4 border border-gray-200 rounded-lg mb-[20px]"
-    onClick={() => navigate("/reachout")}
+    onClick={() => action(true)}
   >
     <div className="flex items-center">
       {icon}
@@ -31,7 +34,7 @@ const InsuranceOption = ({
   </div>
 );
 
-const InsuranceOptions = ({ data }: Props) => {
+const InsuranceOptions = ({ data, action }: Props) => {
   const navigate = useNavigate();
 
   function getIcon(type: string) {
@@ -61,6 +64,7 @@ const InsuranceOptions = ({ data }: Props) => {
             }
             text={d.name}
             navigate={navigate}
+            action={action}
           />
         ))}
     </div>
