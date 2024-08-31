@@ -62,6 +62,26 @@ const templates: any = [
     url: "http://localhost:5173/template-renderer/9a570242-00f7-4bed-b5ac-783f43e4e78c",
     id: "9a570242-00f7-4bed-b5ac-783f43e4e78c",
   },
+  {
+    templateType: "occasion",
+    wishes: "Happy Diwali",
+    message:
+      "Dear Biswa, we at Qoala wish you a joyous and prosperous Diwali. To brighten your celebrations, we are excited to offer you a special 10% discount on travel insurance.",
+    discountPercentage: "10%",
+    customerName: "Biswa",
+    insuranceType: "Travel Insurance",
+    purchaseLink: "https://www.insurancecompany.com/travel-insurance-offer",
+    service: [
+      "Flight delay coverage",
+      "Lost luggage protection",
+      "Medical expenses coverage",
+      "Trip cancellation insurance",
+      "Emergency evacuation",
+    ],
+    image:
+      "https://pub-3626123a908346a7a8be8d9295f44e26.r2.dev/generations/50caffc3-1746-4738-9ffd-78c4935c3aa1-0.png",
+    id: "84ebee8d-6684-4e47-98ae-0231ef399171",
+  },
 ];
 
 const TemplateRenderer: React.FC = () => {
@@ -119,7 +139,7 @@ const TemplateRenderer: React.FC = () => {
   };
 
   function shareLink() {
-    const shareUrl = `${window.location.href}`; // The URL you want to share
+    const shareUrl = `https://biswa.staging.fairdee.co.th/template-renderer-customer/${id}`; // The URL you want to share
     const message = `${template?.message?.wishes} ${template?.message?.message} `; // The text you want to share
     console.log(shareUrl);
     // Construct the LINE share link with both URL and text
