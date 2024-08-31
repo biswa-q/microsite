@@ -1,0 +1,63 @@
+/* Container styling */
+.container {
+	background-color: #f9f9f9;
+	padding: 20px;
+	border-radius: 10px;
+	max-width: 600px;
+	margin: auto;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Header styling */
+.header {
+	text-align: center;
+	color: #333;
+	font-size: 24px;
+	margin-bottom: 20px;
+}
+
+/* Form styling */
+.form {
+	display: flex;
+	flex-direction: column;
+}
+
+/* Form group styling */
+.formGroup {
+	margin-bottom: 15px;
+}
+
+/* Label styling */
+.label {
+	display: block;
+	margin-bottom: 5px;
+	font-weight: bold;
+	color: #333;
+}
+
+/* Select and input styling */
+.select,
+.input {
+	width: 100%;
+	padding: 10px;
+	border-radius: 5px;
+	border: 1px solid #ddd;
+	font-size: 16px;
+	color: #333;
+}
+
+/* Button styling */
+.button {
+	background-color: #007bff;
+	color: #fff;
+	border: none;
+	padding: 10px;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 16px;
+}
+
+/* Button hover styling */
+.button:hover {
+	background-color: #0056b3;
+}

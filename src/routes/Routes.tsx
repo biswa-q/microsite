@@ -1,21 +1,23 @@
-import React from "react";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import Layout from "../layout/Layout";
-import Home from "../pages/Home";
-import ReachOut from "../pages/ReachOut";
+import React from "react"
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"
+import Layout from "../layout/Layout"
+import Home from "../pages/Home"
+import TemplateGenerator from "../pages/TemplateGenerator"
+import TemplateRenderer from "../pages/TemplateRenderer"
 
 const AppRoutes: React.FC = () => {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="reachout" element={<ReachOut />} />
-          <Route path="*" element={<Navigate to="/" />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
-  );
-};
+	return (
+		<BrowserRouter>
+			<Routes>
+				<Route path="/" element={<Layout />}>
+					<Route index element={<Home />} />
+					<Route path="*" element={<Navigate to="/" />} />
+					<Route path="template-generator" element={<TemplateGenerator />} />
+					<Route path="template-renderer/:id" element={<TemplateRenderer />} />
+				</Route>
+			</Routes>
+		</BrowserRouter>
+	)
+}
 
-export default AppRoutes;
+export default AppRoutes
