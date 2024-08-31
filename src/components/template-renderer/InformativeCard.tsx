@@ -65,10 +65,10 @@ const InformativeCard: React.FC<InformativeCardProps> = ({
 
         {/* Company contact information */}
         <div className="text-sm mb-4">
-          <p>Insurance Company</p>
+          <p>Qoala</p>
           <p>Phone: 1-800-123-4567</p>
-          <p>Email: support@insurancecompany.com</p>
-          <p>Website: www.insurancecompany.com</p>
+          <p>Email: support@qoala.com</p>
+          <p>Website: www.qoala.com</p>
         </div>
 
         {/* Company logo */}
