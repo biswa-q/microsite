@@ -49,7 +49,7 @@ const OccasionCard: React.FC<Occasion> = ({
             EXCLUSIVE BIRTHDAY OFFER
           </h2>
           <p className="text-sm">
-            Get a special {discountPercentage}% discount on your {insuranceType}
+            Get a special {discountPercentage} discount on your {insuranceType}
             <br />
             insurance as our birthday gift to you!
           </p>
