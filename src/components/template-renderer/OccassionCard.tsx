@@ -74,7 +74,7 @@ const OccasionCard: React.FC<Occasion> = ({
           href={purchaseLink}
           className="inline-block bg-yellow-600 text-black font-bold py-2 px-4 rounded-lg mb-6 hover:bg-yellow-500 transition-colors"
         >
-          Claim your {discountPercentage}% discount
+          Claim your {discountPercentage} discount
         </a>
 
         <p className="text-sm mb-6">
