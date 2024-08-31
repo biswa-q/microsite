@@ -96,6 +96,16 @@ const TemplateRenderer: React.FC = () => {
 							: storedMessage.image || "",
 				})
 			}
+			// console.log({
+			// 	message:
+			// 		storedMessage && typeof storedMessage === "string"
+			// 			? JSON.parse(storedMessage)
+			// 			: storedMessage || null,
+			// 	image:
+			// 		storedMessage && typeof storedMessage === "string"
+			// 			? JSON.parse(storedMessage).image
+			// 			: storedMessage.image || "",
+			// })
 		}
 	}, [id])
 
