@@ -4,8 +4,8 @@ import { useNavigate } from "react-router-dom";
 import OpenAI from "openai";
 import { v4 as uuidv4 } from "uuid";
 
-const apiKey =
-	""
+const apiKey = "",
+  imageApiKey = "";
 const openai = new OpenAI({
   apiKey,
   dangerouslyAllowBrowser: true,
@@ -141,30 +141,30 @@ const TemplateGeneratorLayout: React.FC = () => {
     }
   }
 
-	async function generateImageFromText(prompt: string): Promise<string | null> {
-		try {
-			const myHeaders = new Headers({
-				"Content-Type": "application/json",
-			})
-			const payload = {
-				key: "",
-				prompt: prompt,
-				negative_prompt: "bad quality",
-				width: 512,
-				height: 512,
-				safety_checker: false,
-				seed: null,
-				samples: 1,
-				base64: false,
-				webhook: null,
-				track_id: null,
-			}
-			const requestOptions: RequestInit = {
-				method: "POST",
-				headers: myHeaders,
-				body: JSON.stringify(payload),
-				redirect: "follow",
-			}
+  async function generateImageFromText(prompt: string): Promise<string | null> {
+    try {
+      const myHeaders = new Headers({
+        "Content-Type": "application/json",
+      });
+      const payload = {
+        key: imageApiKey,
+        prompt: prompt,
+        negative_prompt: "bad quality",
+        width: 512,
+        height: 512,
+        safety_checker: false,
+        seed: null,
+        samples: 1,
+        base64: false,
+        webhook: null,
+        track_id: null,
+      };
+      const requestOptions: RequestInit = {
+        method: "POST",
+        headers: myHeaders,
+        body: JSON.stringify(payload),
+        redirect: "follow",
+      };
 
       const response = await fetch(
         "https://modelslab.com/api/v6/realtime/text2img",
