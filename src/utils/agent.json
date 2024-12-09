@@ -1,17 +1,22 @@
 {
   "agent_id": "A001",
-  "name": "Arjun Sharma",
+  "name": "Somchai THEERAVIT",
   "title": "Insurance Specialist",
   "contact_details": {
-    "email": "arjun.sharma@example.com",
-    "phone": "+919876543210"
+    "email": "somchai.theeravit@example.com",
+    "phone": "+66812345678"
   },
   "location": {
-    "city": "Bangalore",
-    "state": "Karnataka",
-    "country": "India"
+    "city": "Bangkok",
+    "state": "Thailand",
+    "country": "Thailand"
   },
-  "total_policies_sold": 31,
+  "total_policies_sold": {
+    "type": "Policies sold",
+    "text": "15.7",
+    "span": "K",
+    "icon": "badgeIcon"
+  },
   "happy_customers_served": 265,
   "average_response_time": "< 1 Hr",
   "customer_reviews": [

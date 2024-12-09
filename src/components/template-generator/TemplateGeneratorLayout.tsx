@@ -6,7 +6,7 @@ import { v4 as uuidv4 } from "uuid";
 import AiLoader from "../ai-loader/AiLoader";
 
 const apiKey = "";
-const imageAiKey = "";
+
 const openai = new OpenAI({
   apiKey,
   dangerouslyAllowBrowser: true,
@@ -141,46 +141,41 @@ const TemplateGeneratorLayout: React.FC = () => {
     }
   }
 
-  async function generateImageFromText(prompt: string): Promise<string | null> {
+  const handleGenerateImage = async (prompt: string) => {
+    if (!prompt) return;
+    setLoading(true);
+
     try {
-      const myHeaders = new Headers({
-        "Content-Type": "application/json",
-      });
-      const payload = {
-        key: imageAiKey,
-        prompt: prompt,
-        negative_prompt: "bad quality",
-        width: 512,
-        height: 512,
-        safety_checker: false,
-        seed: null,
-        samples: 1,
-        base64: false,
-        webhook: null,
-        track_id: null,
-      };
-      const requestOptions: RequestInit = {
-        method: "POST",
-        headers: myHeaders,
-        body: JSON.stringify(payload),
-        redirect: "follow",
-      };
-
       const response = await fetch(
-        "https://modelslab.com/api/v6/realtime/text2img",
-        requestOptions
+        "https://api.openai.com/v1/images/generations",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${apiKey}`, // <-- Replace this with your key
+          },
+          body: JSON.stringify({
+            prompt: prompt,
+            n: 1,
+            size: "1024x1024",
+          }),
+        }
       );
-      if (!response.ok) {
-        throw new Error(`Error: ${response.statusText}`);
-      }
 
-      const result = await response.json();
-      return result.output[0] || null;
+      const data = await response.json();
+      console.log("data", data, data.data[0].url);
+      if (data.data && data.data.length > 0) {
+        // setImageUrl(data.data[0].url);
+        return data.data[0].url;
+      } else {
+        console.error("No image returned from the API:", data);
+      }
     } catch (error) {
-      console.error("Error generating image:", error);
-      return null;
+      console.error("Error calling OpenAI API:", error);
+    } finally {
+      setLoading(false);
     }
-  }
+  };
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -198,7 +193,7 @@ const TemplateGeneratorLayout: React.FC = () => {
     }
 
     if (!textMessagesObj.image) {
-      const imgUrl: any = await generateImageFromText(prompt);
+      const imgUrl: any = await handleGenerateImage(prompt);
       textMessagesObj.image = imgUrl;
 
       console.log("imgUrl", imgUrl);
