@@ -20,6 +20,8 @@ const TemplateGeneratorLayout: React.FC = () => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
 
+  console.log("templateType", templateType);
+
   const handleTemplateTypeChange = (
     e: React.ChangeEvent<HTMLSelectElement>
   ) => {
