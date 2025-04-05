@@ -20,18 +20,20 @@ const TemplateGeneratorLayout: React.FC = () => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
 
-  console.log("templateType", templateType);
-
   const handleTemplateTypeChange = (
     e: React.ChangeEvent<HTMLSelectElement>
   ) => {
     setTemplateType(e.target.value);
     setCustomOccasion("");
     setDiscountPercentage("");
+
+    console.log("templateType", templateType);
   };
 
   const handleCustomerNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setCustomerName(e.target.value);
+
+    console.log("templateType", templateType);
   };
 
   const handleDiscountPercentageChange = (
@@ -217,6 +219,10 @@ const TemplateGeneratorLayout: React.FC = () => {
     setLoading(false);
     navigate(`/template-renderer/${uniqueId}`);
   }
+
+  console.log("templateType", templateType);
+
+  console.log("templateType", templateType);
 
   return (
     <div className="container">
