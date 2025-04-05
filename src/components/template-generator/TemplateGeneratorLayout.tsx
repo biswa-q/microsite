@@ -26,10 +26,14 @@ const TemplateGeneratorLayout: React.FC = () => {
     setTemplateType(e.target.value);
     setCustomOccasion("");
     setDiscountPercentage("");
+
+    console.log("templateType", templateType);
   };
 
   const handleCustomerNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setCustomerName(e.target.value);
+
+    console.log("templateType", templateType);
   };
 
   const handleDiscountPercentageChange = (
@@ -215,6 +219,10 @@ const TemplateGeneratorLayout: React.FC = () => {
     setLoading(false);
     navigate(`/template-renderer/${uniqueId}`);
   }
+
+  console.log("templateType", templateType);
+
+  console.log("templateType", templateType);
 
   return (
     <div className="container">
